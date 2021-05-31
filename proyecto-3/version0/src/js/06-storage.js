@@ -1,15 +1,17 @@
-'use strict';
+"use strict";
 function getData() {
-  let user = JSON.parse(localStorage.getItem('user'));
+  let user = JSON.parse(localStorage.getItem("user"));
+
+  // No funciona el LocalStorage (no guarda)
 
   if (user !== null) {
     for (const button of buttons) {
       if (parseInt(button.value) === user.palette) {
         button.checked = true;
       }
-      const card = document.querySelector('.js-card');
-      card.classList.remove('js-color-3');
-      card.classList.remove('js-color-2');
+      const card = document.querySelector(".js-card");
+      card.classList.remove("js-color-3");
+      card.classList.remove("js-color-2");
 
       card.classList.add(`js-color-${user.palette}`);
       changecolor();
