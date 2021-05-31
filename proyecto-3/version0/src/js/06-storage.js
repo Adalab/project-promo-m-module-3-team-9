@@ -1,0 +1,36 @@
+'use strict';
+function getData() {
+  let user = JSON.parse(localStorage.getItem('user'));
+
+  if (user !== null) {
+    for (const button of buttons) {
+      if (parseInt(button.value) === user.palette) {
+        button.checked = true;
+      }
+      const card = document.querySelector('.js-card');
+      card.classList.remove('js-color-3');
+      card.classList.remove('js-color-2');
+
+      card.classList.add(`js-color-${user.palette}`);
+      changecolor();
+    }
+    inputName.value = user.name;
+    inputJob.value = user.job;
+    inputEmail.value = user.email;
+    inputTel.value = user.phone;
+    inputIn.value = user.linkedin;
+    inputGit.value = user.github;
+
+    userData.name = user.name;
+    userData.job = user.job;
+    userData.email = user.email;
+    userData.linkedin = user.linkedin;
+    userData.phone = user.phone;
+    userData.github = user.github;
+    userData.photo = user.photo;
+
+    paintFormInCard();
+    paintPhotoInCard();
+  }
+}
+getData();
