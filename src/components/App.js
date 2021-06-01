@@ -1,4 +1,4 @@
-import "../stylesheet/App.css";
+import "../stylesheet/App.scss";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
                   className="card_button js-reset-button"
                   title="reset-button"
                 >
-                  <i className="far fa-trash-alt" aria-hidden="true"></i>Reset
+                  <i className="far fa-trash-alt"></i>Reset
                 </a>
               </div>
               <section className="card js-card">
@@ -48,10 +48,7 @@ function App() {
                       target="_blank"
                       title="phone-icon"
                     >
-                      <i
-                        className="fas fa-mobile-alt card_media--item"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fas fa-mobile-alt card_media--item"></i>
                     </a>
                   </li>
                   <li>
@@ -61,10 +58,7 @@ function App() {
                       target="_blank"
                       title="mail-icon"
                     >
-                      <i
-                        className="fa fa-envelope card_media--item"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fa fa-envelope card_media--item"></i>
                     </a>
                   </li>
                   <li>
@@ -74,10 +68,7 @@ function App() {
                       target="_blank"
                       title="linkedin-icon"
                     >
-                      <i
-                        className="fab fa-linkedin-in card_media--item"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fab fa-linkedin-in card_media--item"></i>
                     </a>
                   </li>
                   <li>
@@ -87,10 +78,7 @@ function App() {
                       target="_blank"
                       title="github-icon"
                     >
-                      <i
-                        className="fab fa-github-alt card_media--item"
-                        aria-hidden="true"
-                      ></i>
+                      <i className="fab fa-github-alt card_media--item"></i>
                     </a>
                   </li>
                 </ul>
@@ -118,7 +106,6 @@ function App() {
                         type="radio"
                         name="palette"
                         value="1"
-                        z
                       />
                       <div className="design_form-label--div">
                         <div className="design_form-label--div1"></div>
@@ -173,7 +160,7 @@ function App() {
                   action="https://formspree.io/f/mbjpqobw"
                   method="POST"
                 >
-                  <label className="label_fill" for="fullName">
+                  <label className="label_fill" htmlFor="fullName">
                     Nombre completo
                   </label>
                   <input
@@ -182,10 +169,9 @@ function App() {
                     type="text"
                     name="name"
                     placeholder="Ej:Sally Jill"
-                    maxlength="18"
                     required
                   />
-                  <label className="label_fill" for="rol">
+                  <label className="label_fill" htmlFor="rol">
                     Puesto
                   </label>
                   <input
@@ -194,7 +180,6 @@ function App() {
                     type="text"
                     name="job"
                     placeholder="Ej:Front-End unicorn"
-                    maxlength="20"
                     required
                   />
                   <label className="label_fill"> Imagen de perfil </label>
@@ -202,7 +187,7 @@ function App() {
                     <div className="action">
                       <label
                         className="action__upload-btn button_image"
-                        for="img-selector"
+                        htmlFor="img-selector"
                       >
                         Añadir imagen
                       </label>
@@ -220,7 +205,7 @@ function App() {
                     </div>
                   </div>
 
-                  <label className="label_fill" for="emailAddress">
+                  <label className="label_fill" htmlFor="emailAddress">
                     Email
                   </label>
                   <input
@@ -231,7 +216,7 @@ function App() {
                     placeholder="Ej:sally-jill@gmail.com"
                     required
                   />
-                  <label className="label_fill" for="telephone">
+                  <label className="label_fill" htmlFor="telephone">
                     Telefono
                   </label>
                   <input
@@ -242,7 +227,7 @@ function App() {
                     placeholder="Ej:555-55-55-55"
                     pattern=".{9}"
                   />
-                  <label className="label_fill" for="Linkedin">
+                  <label className="label_fill" htmlFor="Linkedin">
                     Linkedin{" "}
                   </label>
                   <input
@@ -253,7 +238,7 @@ function App() {
                     placeholder="Ej: sally.hill"
                     required
                   />
-                  <label className="label_fill" for="Github">
+                  <label className="label_fill" htmlFor="Github">
                     {" "}
                     Github
                   </label>
@@ -280,10 +265,7 @@ function App() {
 
               <div className="collapsible">
                 <div className="sharecard js-buttoncreate">
-                  <i
-                    className="far fa-address-card cardicon"
-                    aria-hidden="true"
-                  ></i>
+                  <i className="far fa-address-card cardicon"></i>
                   <div className="btncreatecard">crear tarjeta</div>
                 </div>
 
