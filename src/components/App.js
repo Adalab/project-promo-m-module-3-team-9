@@ -118,6 +118,7 @@ function App() {
                         type="radio"
                         name="palette"
                         value="1"
+                        z
                       />
                       <div className="design_form-label--div">
                         <div className="design_form-label--div1"></div>
@@ -172,7 +173,7 @@ function App() {
                   action="https://formspree.io/f/mbjpqobw"
                   method="POST"
                 >
-                  <label className="label_fill" htmlFor="fullName">
+                  <label className="label_fill" for="fullName">
                     Nombre completo
                   </label>
                   <input
@@ -184,7 +185,7 @@ function App() {
                     maxlength="18"
                     required
                   />
-                  <label className="label_fill" htmlFor="rol">
+                  <label className="label_fill" for="rol">
                     Puesto
                   </label>
                   <input
@@ -201,7 +202,7 @@ function App() {
                     <div className="action">
                       <label
                         className="action__upload-btn button_image"
-                        htmlFor="img-selector"
+                        for="img-selector"
                       >
                         Añadir imagen
                       </label>
@@ -214,17 +215,12 @@ function App() {
                       />
                     </div>
                     <div className="profile">
-                      <div
-                        className="profile__image js__profile-image"
-                        style="
-                        background-image: url(https://via.placeholder.com/300x300/cccccc/666666/?text=IMAGE);
-                      "
-                      ></div>
+                      <div className="profile__image js__profile-image"></div>
                       <div className="checkbox profile__preview js__profile-preview"></div>
                     </div>
                   </div>
 
-                  <label className="label_fill" htmlFor="emailAddress">
+                  <label className="label_fill" for="emailAddress">
                     Email
                   </label>
                   <input
@@ -235,7 +231,7 @@ function App() {
                     placeholder="Ej:sally-jill@gmail.com"
                     required
                   />
-                  <label className="label_fill" htmlFor="telephone">
+                  <label className="label_fill" for="telephone">
                     Telefono
                   </label>
                   <input
@@ -246,7 +242,7 @@ function App() {
                     placeholder="Ej:555-55-55-55"
                     pattern=".{9}"
                   />
-                  <label className="label_fill" htmlFor="Linkedin">
+                  <label className="label_fill" for="Linkedin">
                     Linkedin{" "}
                   </label>
                   <input
@@ -257,7 +253,7 @@ function App() {
                     placeholder="Ej: sally.hill"
                     required
                   />
-                  <label className="label_fill" htmlFor="Github">
+                  <label className="label_fill" for="Github">
                     {" "}
                     Github
                   </label>
