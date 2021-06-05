@@ -1,7 +1,7 @@
-import Collapsable from "./Collapsable";
-import Design from "./Design";
-import Fill from "./Fill";
-import Share from "./Share";
+import Collapsable from './Collapsable';
+import Design from './Design';
+import Fill from './Fill';
+import Share from './Share';
 
 function Form() {
   return (
