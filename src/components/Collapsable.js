@@ -1,44 +1,8 @@
-import {useState} from 'react';
-
 function Collapsable(props) {
-  //true es abierto
-  const [isDesing, setDesing] = useState(true);
-  const [isFill, setFill] = useState(false);
-  const [isShare, setShare] = useState();
-
-  const handleOnClickDesign = () => {
-    if (isDesing === true) {
-      setDesing(false);
-    } else {
-      setDesing(true);
-      setFill(false);
-      setShare(false);
-    }
-  };
-  const handleOnClickfill = () => {
-    if (isFill === true) {
-      setFill(false);
-    } else {
-      setDesing(false);
-      setFill(true);
-      setShare(false);
-    }
-  };
-  const handleOnClickShare = () => {
-    if (isShare === true) {
-      setShare(false);
-    } else {
-      setDesing(false);
-      setFill(false);
-      setShare(true);
-    }
-  };
-  const collapsibleChange =
-    isDesing === true || isFill === true || isShare === true ? 'active' : '';
-
+  const classActive = `design js-section ${props.active && "active"}`;
   return (
-    <section className={`design ${collapsibleChange} js-section`}>
-      <div className="title_wrapper " onClick={handleOnClickDesign}>
+    <section className={classActive} onClick={props.onClick}>
+      <div className="title_wrapper ">
         <div className="title_wrapper--text">
           <i className={props.icon}></i>
           <h2 className="title">{props.title}</h2>
