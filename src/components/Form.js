@@ -1,8 +1,8 @@
-import {useState} from 'react';
 import Collapsable from './Collapsable';
 import Design from './Design';
 import Fill from './Fill';
 import Share from './Share';
+import {useState} from 'react';
 
 function Form() {
   const [active, setActive] = useState('design');
@@ -10,26 +10,26 @@ function Form() {
   return (
     <div className="main_card--fill">
       <Collapsable
-        onClick={() => setActive('design')}
-        active={active == 'design'}
         title="Diseña"
         icon="fal fa-object-ungroup icon"
+        onClick={() => setActive('design')}
+        active={active == 'design'}
       >
-        <Design />
+        <Design></Design>
       </Collapsable>
       <Collapsable
-        onClick={() => setActive('fill')}
-        active={active == 'fill'}
         title="Rellena"
         icon="far fa-keyboard icon"
+        onClick={() => setActive('fill')}
+        active={active == 'fill'}
       >
         <Fill></Fill>
       </Collapsable>
       <Collapsable
-        onClick={() => setActive('share')}
-        active={active == 'share'}
         title="Comparte"
         icon="fas fa-share-alt icon"
+        onClick={() => setActive('share')}
+        active={active == 'share'}
       >
         <Share></Share>
       </Collapsable>

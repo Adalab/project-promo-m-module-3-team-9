@@ -1,20 +1,13 @@
 import '../stylesheet/App.scss';
 import Header from './Header';
-import Card from './Card';
-import Form from './Form';
+import Main from './Main';
 import Footer from './Footer';
-// import Design from './Design';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main className="main_card--background">
-        <div className="main_card">
-          <Card />
-          <Form />
-        </div>
-      </main>
+      <Main />
       <Footer />
     </div>
   );

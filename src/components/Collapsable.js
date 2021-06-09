@@ -1,11 +1,8 @@
-// import {useState} from 'react';
-
-function Collapsable({icon, title, active, onClick, children}) {
-  const classnames = `design ${active && 'active'} js-section`;
-
+function Collapsable(props) {
+  const classActive = `design js-section ${props.active && 'active'}`;
   return (
-    <section className={classnames} onClick={onClick}>
-      <div className="title_wrapper">
+    <section className={classActive} onClick={props.onClick}>
+      <div className="title_wrapper ">
         <div className="title_wrapper--text">
           <i className={icon}></i>
           <h2 className="title">{title}</h2>
