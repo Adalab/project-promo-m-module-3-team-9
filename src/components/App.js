@@ -1,8 +1,9 @@
-import "../stylesheet/App.scss";
-import Header from "./Header";
-import Card from "./Card";
-import Form from "./Form";
-import Footer from "./Footer";
+import '../stylesheet/App.scss';
+import Header from './Header';
+import Card from './Card';
+import Form from './Form';
+import Footer from './Footer';
+// import Design from './Design';
 
 function App() {
   return (
