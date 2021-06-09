@@ -1,4 +1,7 @@
-function Fill() {
+import GetAvatar from './GetAvatar';
+import Profile from './Profile';
+
+function Fill({avatar, updateAvatar}) {
   return (
     <form
       className="contact-form js-form"
@@ -27,15 +30,11 @@ function Fill() {
         placeholder="Ej:Front-End unicorn"
         required
       />
+
       <label className="label_fill"> Imagen de perfil </label>
+      <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
       <div className="add_image">
         <div className="action">
-          <label
-            className="action__upload-btn button_image"
-            htmlFor="img-selector"
-          >
-            Añadir imagen
-          </label>
           <input
             type="file"
             name="photo"
@@ -43,10 +42,6 @@ function Fill() {
             className="action__hiddenField js__profile-upload-btn"
             required
           />
-        </div>
-        <div className="profile">
-          <div className="profile__image js__profile-image"></div>
-          <div className="checkbox profile__preview js__profile-preview"></div>
         </div>
       </div>
 
@@ -73,7 +68,7 @@ function Fill() {
         pattern=".{9}"
       />
       <label className="label_fill" htmlFor="Linkedin">
-        Linkedin{" "}
+        Linkedin{' '}
       </label>
       <input
         className="input js-inputIn"
@@ -84,7 +79,7 @@ function Fill() {
         required
       />
       <label className="label_fill" htmlFor="Github">
-        {" "}
+        {' '}
         Github
       </label>
       <input

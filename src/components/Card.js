@@ -1,4 +1,5 @@
-function Card() {
+import Profile from './Profile';
+function Card({avatar}) {
   return (
     <div className="main_card--preview">
       <section className="card_background">
@@ -18,7 +19,10 @@ function Card() {
               Front-end developer
             </h3>
           </section>
-          <section className="card_photo js__profile-image"></section>
+          <section className="card_photo js__profile-image">
+            <Profile avatar={avatar} />
+          </section>
+
           <ul className="card_media">
             <li>
               <a

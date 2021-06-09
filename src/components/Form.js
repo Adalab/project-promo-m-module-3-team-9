@@ -4,7 +4,7 @@ import Fill from './Fill';
 import Share from './Share';
 import {useState} from 'react';
 
-function Form() {
+function Form({avatar, updateAvatar}) {
   const [active, setActive] = useState('design');
 
   return (
@@ -23,7 +23,7 @@ function Form() {
         onClick={() => setActive('fill')}
         active={active == 'fill'}
       >
-        <Fill></Fill>
+        <Fill updateAvatar={updateAvatar} avatar={avatar}></Fill>
       </Collapsable>
       <Collapsable
         title="Comparte"
