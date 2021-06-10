@@ -1,8 +1,8 @@
-function Design() {
+function Design({ onChange }) {
   // const currentColor = 1;
 
   return (
-    <form className="design_form">
+    <form className="design_form" onChange={onChange}>
       <p className="design_form-title">colores</p>
       <div className="design_form-box">
         <label className="design_form-label">

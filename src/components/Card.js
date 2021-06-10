@@ -1,5 +1,5 @@
-import Profile from './Profile';
-function Card({avatar}) {
+import Profile from "./Profile";
+function Card({ photo, name, job, email, phone, linkedin, github, palette }) {
   return (
     <div className="main_card--preview">
       <section className="card_background">
@@ -14,20 +14,22 @@ function Card({avatar}) {
         </div>
         <section className="card js-card">
           <section className="card_info">
-            <h2 className="card_info--name js-previewname">Nombre Apellido</h2>
+            <h2 className="card_info--name js-previewname">
+              {name === "" ? "Nombre y Apellido" : name}
+            </h2>
             <h3 className="card_info--job js-previewjob">
-              Front-end developer
+              {job === "" ? "Front-end developer" : job}
             </h3>
           </section>
           <section className="card_photo js__profile-image">
-            <Profile avatar={avatar} />
+            <Profile avatar={photo} />
           </section>
 
           <ul className="card_media">
             <li>
               <a
                 className="js-linkTel"
-                href=""
+                href={`tel:${phone}`}
                 target="_blank"
                 title="phone-icon"
               >
@@ -37,7 +39,7 @@ function Card({avatar}) {
             <li>
               <a
                 className="js-linkEmail"
-                href=""
+                href={`mailto:${email}`}
                 target="_blank"
                 title="mail-icon"
               >
@@ -47,7 +49,7 @@ function Card({avatar}) {
             <li>
               <a
                 className="js-linkIn"
-                href="#"
+                href={`https://linkedin.com/in/${linkedin}`}
                 target="_blank"
                 title="linkedin-icon"
               >
@@ -57,7 +59,7 @@ function Card({avatar}) {
             <li>
               <a
                 className="js-linkGit"
-                href="#"
+                href={`https://github.com/${github}`}
                 target="_blank"
                 title="github-icon"
               >

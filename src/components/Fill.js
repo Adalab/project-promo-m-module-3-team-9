@@ -1,12 +1,12 @@
-import GetAvatar from './GetAvatar';
-import Profile from './Profile';
+import GetAvatar from "./GetAvatar";
 
-function Fill({avatar, updateAvatar}) {
+function Fill({ photo, updateAvatar, onKeyUp }) {
   return (
     <form
       className="contact-form js-form"
       action="https://formspree.io/f/mbjpqobw"
       method="POST"
+      onKeyUp={onKeyUp}
     >
       <label className="label_fill" htmlFor="fullName">
         Nombre completo
@@ -32,7 +32,7 @@ function Fill({avatar, updateAvatar}) {
       />
 
       <label className="label_fill"> Imagen de perfil </label>
-      <GetAvatar avatar={avatar} updateAvatar={updateAvatar} />
+      <GetAvatar avatar={photo} updateAvatar={updateAvatar} />
       <div className="add_image">
         <div className="action">
           <input
@@ -68,7 +68,7 @@ function Fill({avatar, updateAvatar}) {
         pattern=".{9}"
       />
       <label className="label_fill" htmlFor="Linkedin">
-        Linkedin{' '}
+        Linkedin{" "}
       </label>
       <input
         className="input js-inputIn"
@@ -79,7 +79,7 @@ function Fill({avatar, updateAvatar}) {
         required
       />
       <label className="label_fill" htmlFor="Github">
-        {' '}
+        {" "}
         Github
       </label>
       <input
