@@ -1,8 +1,19 @@
 import GetAvatar from './GetAvatar';
 
-function Fill({photo, updateAvatar, onKeyUp, name, job, email, github, linkedin, phone}) {
+function Fill({
+  photo,
+  updateAvatar,
+  onKeyUp,
+  name,
+  job,
+  email,
+  github,
+  linkedin,
+  phone,
+}) {
   return (
     <form
+      id="reset"
       className="contact-form js-form"
       action="https://formspree.io/f/mbjpqobw"
       method="POST"

@@ -1,4 +1,4 @@
-import Profile from "./Profile";
+import Profile from './Profile';
 import {Link} from 'react-router-dom';
 function Card({
   photo,
@@ -10,6 +10,7 @@ function Card({
   github,
   palette,
   handleOnClickReset,
+  formReset,
 }) {
   return (
     <div className="main_card--preview">
@@ -27,10 +28,10 @@ function Card({
         <section className={`card js-card js-color-${palette}`}>
           <section className="card_info">
             <h2 className="card_info--name js-previewname">
-              {name === "" ? "Nombre y Apellido" : name}
+              {name === '' ? 'Nombre y Apellido' : name}
             </h2>
             <h3 className="card_info--job js-previewjob">
-              {job === "" ? "Front-end developer" : job}
+              {job === '' ? 'Front-end developer' : job}
             </h3>
           </section>
           <section className="card_photo js__profile-image">
@@ -42,7 +43,7 @@ function Card({
               <Link
                 className="js-linkTel"
                 href={`tel:${phone}`}
-                target='_blank'
+                target="_blank"
                 title="phone-icon"
               >
                 <i className="fas fa-mobile-alt card_media--item"></i>
