@@ -1,27 +1,27 @@
-import Card from "./Card";
-import Form from "./Form";
-import { useState } from "react";
+import Card from './Card';
+import Form from './Form';
+import {useState} from 'react';
 
 function Main() {
   //const [avatar, setAvatar] = useState("");
 
   const [form, setForm] = useState({
-    name: "",
-    job: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: "",
-    photo: "",
-    palette: "",
+    name: '',
+    job: '',
+    email: '',
+    phone: '',
+    linkedin: '',
+    github: '',
+    photo: '',
+    palette: '1',
   });
 
   const handleOnKeyUp = (ev) => {
-    setForm({ ...form, [ev.target.name]: ev.target.value });
+    setForm({...form, [ev.target.name]: ev.target.value});
   };
 
   const handleOnChange = (ev) => {
-    setForm({ ...form, [ev.target.name]: ev.target.value });
+    setForm({...form, [ev.target.name]: ev.target.value});
   };
 
   const updateAvatar = (avatar) => {
@@ -40,7 +40,8 @@ function Main() {
           updateAvatar={updateAvatar}
           {...form}
           onKeyUp={handleOnKeyUp}
-          onChange={handleOnChange}
+          onClick={handleOnChange}
+          // palette={palette}
         />
       </div>
     </main>

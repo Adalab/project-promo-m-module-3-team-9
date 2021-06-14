@@ -1,5 +1,5 @@
-import Profile from "./Profile";
-function Card({ photo, name, job, email, phone, linkedin, github, palette }) {
+import Profile from './Profile';
+function Card({photo, name, job, email, phone, linkedin, github, form}) {
   return (
     <div className="main_card--preview">
       <section className="card_background">
@@ -15,10 +15,10 @@ function Card({ photo, name, job, email, phone, linkedin, github, palette }) {
         <section className="card js-card">
           <section className="card_info">
             <h2 className="card_info--name js-previewname">
-              {name === "" ? "Nombre y Apellido" : name}
+              {name === '' ? 'Nombre y Apellido' : name}
             </h2>
             <h3 className="card_info--job js-previewjob">
-              {job === "" ? "Front-end developer" : job}
+              {job === '' ? 'Front-end developer' : job}
             </h3>
           </section>
           <section className="card_photo js__profile-image">

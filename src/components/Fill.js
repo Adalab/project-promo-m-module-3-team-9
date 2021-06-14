@@ -1,6 +1,6 @@
-import GetAvatar from "./GetAvatar";
+import GetAvatar from './GetAvatar';
 
-function Fill({ photo, updateAvatar, onKeyUp }) {
+function Fill({photo, updateAvatar, onKeyUp}) {
   return (
     <form
       className="contact-form js-form"
@@ -68,7 +68,7 @@ function Fill({ photo, updateAvatar, onKeyUp }) {
         pattern=".{9}"
       />
       <label className="label_fill" htmlFor="Linkedin">
-        Linkedin{" "}
+        Linkedin{' '}
       </label>
       <input
         className="input js-inputIn"
@@ -79,7 +79,7 @@ function Fill({ photo, updateAvatar, onKeyUp }) {
         required
       />
       <label className="label_fill" htmlFor="Github">
-        {" "}
+        {' '}
         Github
       </label>
       <input
