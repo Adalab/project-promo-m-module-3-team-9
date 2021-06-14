@@ -1,6 +1,6 @@
 import GetAvatar from './GetAvatar';
 
-function Fill({photo, updateAvatar, onKeyUp}) {
+function Fill({photo, updateAvatar, onKeyUp, name, job, email, github, linkedin, phone}) {
   return (
     <form
       className="contact-form js-form"
@@ -15,6 +15,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
         className="input js-inputname"
         id="fullName"
         type="text"
+        defaultValue={name}
         name="name"
         placeholder="Ej:Sally Jill"
         required
@@ -25,6 +26,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
       <input
         className="input js-inputjobtitle"
         id="rol"
+        defaultValue={job}
         type="text"
         name="job"
         placeholder="Ej:Front-End unicorn"
@@ -51,6 +53,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
       <input
         className="input js-inputEmail"
         type="email"
+        defaultValue={email}
         id="emailAddress"
         name="email"
         placeholder="Ej:sally-jill@gmail.com"
@@ -62,6 +65,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
       <input
         className="input js-inputTel"
         type="tel"
+        defaultValue={phone}
         id="telephone"
         name="phone"
         placeholder="Ej:555-55-55-55"
@@ -73,6 +77,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
       <input
         className="input js-inputIn"
         id="Linkedin"
+        defaultValue={linkedin}
         type="text"
         name="linkedin"
         placeholder="Ej: sally.hill"
@@ -85,6 +90,7 @@ function Fill({photo, updateAvatar, onKeyUp}) {
       <input
         className="input js-inputGit"
         id="Github"
+        defaultValue={github}
         type="text"
         name="github"
         placeholder="Ej: sally-hill"

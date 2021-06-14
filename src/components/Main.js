@@ -1,27 +1,48 @@
-import Card from './Card';
-import Form from './Form';
-import {useState} from 'react';
+import Card from "./Card";
+import Form from "./Form";
+import React, { useState, useEffect } from "react";
+import ls from "../services/localstorage";
 
 function Main() {
-  //const [avatar, setAvatar] = useState("");
+  const localStorageForm = ls.get("form") || {};
 
-  const [form, setForm] = useState({
-    name: '',
-    job: '',
-    email: '',
-    phone: '',
-    linkedin: '',
-    github: '',
-    photo: '',
-    palette: '1',
-  });
+  const [form, setForm] = useState(
+    localStorageForm.form || {
+      name: "",
+      job: "",
+      email: "",
+      phone: "",
+      linkedin: "",
+      github: "",
+      photo: "",
+      palette: "1",
+    }
+  );
+
+  useEffect(() => {
+    ls.set("form", { form });
+  }, [form]);
+
+  const handleReset = (ev) => {
+    setForm({
+      name: "",
+      job: "",
+      email: "",
+      phone: "",
+      linkedin: "",
+      github: "",
+      photo: "",
+      palette: "1",
+    });
+    localStorage.clear();
+  };
 
   const handleOnKeyUp = (ev) => {
-    setForm({...form, [ev.target.name]: ev.target.value});
+    setForm({ ...form, [ev.target.name]: ev.target.value });
   };
 
   const handleOnChange = (ev) => {
-    setForm({...form, [ev.target.name]: ev.target.value});
+    setForm({ ...form, [ev.target.name]: ev.target.value });
   };
 
   const updateAvatar = (avatar) => {
@@ -35,7 +56,7 @@ function Main() {
   return (
     <main className="main_card--background">
       <div className="main_card">
-        <Card {...form} />
+        <Card {...form} handleOnClickReset={handleReset} />
         <Form
           updateAvatar={updateAvatar}
           {...form}
