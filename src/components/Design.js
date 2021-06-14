@@ -1,6 +1,4 @@
-function Design({ onChange }) {
-  // const currentColor = 1;
-
+function Design({ onChange, form }) {
   return (
     <form className="design_form" onChange={onChange}>
       <p className="design_form-title">colores</p>
@@ -10,8 +8,8 @@ function Design({ onChange }) {
             className="design_form-label--input js-input-design"
             type="radio"
             name="palette"
-            // checked={currentColor === 1}
-            // onChange={onChange}
+            checked={form === "1"}
+            onClick={onChange}
             value="1"
           />
           <div className="design_form-label--div">
@@ -26,8 +24,8 @@ function Design({ onChange }) {
             className="design_form-label--input js-input-design"
             type="radio"
             name="palette"
-            // checked={currentColor === 2}
-            // onChange={onChange}
+            checked={form === "2"}
+            onClick={onChange}
             value="2"
           />
           <div className="design_form-label--div">
@@ -43,8 +41,8 @@ function Design({ onChange }) {
             type="radio"
             name="palette"
             value="3"
-            // checked={currentColor === 3}
-            // onChange={onChange}
+            checked={form === "3"}
+            onClick={onChange}
           />
           <div className="design_form-label--div">
             <div className="design_form-label--div7"></div>
