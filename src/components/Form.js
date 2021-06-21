@@ -16,6 +16,9 @@ function Form({
   github,
   linkedin,
   phone,
+  handleCreatedCard,
+  cardURL,
+  status,
 }) {
   const [active, setActive] = useState('design');
 
@@ -27,7 +30,7 @@ function Form({
         onClick={() => setActive('design')}
         active={active === 'design'}
       >
-        <Design onClick={onClick} palette={palette}></Design>
+        <Design onClick={onClick} palette={palette} />
       </Collapsable>
       <Collapsable
         title="Rellena"
@@ -45,7 +48,7 @@ function Form({
           updateAvatar={updateAvatar}
           photo={photo}
           onKeyUp={onKeyUp}
-        ></Fill>
+        />
       </Collapsable>
       <Collapsable
         title="Comparte"
@@ -53,7 +56,11 @@ function Form({
         onClick={() => setActive('share')}
         active={active === 'share'}
       >
-        <Share></Share>
+        <Share
+          handleCreatedCard={handleCreatedCard}
+          status={status}
+          cardURL={cardURL}
+        />
       </Collapsable>
     </div>
   );

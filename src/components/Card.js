@@ -1,5 +1,4 @@
 import Profile from './Profile';
-import {Link} from 'react-router-dom';
 function Card({
   photo,
   name,
@@ -40,14 +39,14 @@ function Card({
 
           <ul className="card_media">
             <li>
-              <Link
+              <a
                 className="js-linkTel"
                 href={`tel:${phone}`}
                 target="_blank"
                 title="phone-icon"
               >
                 <i className="fas fa-mobile-alt card_media--item"></i>
-              </Link>
+              </a>
             </li>
             <li>
               <a

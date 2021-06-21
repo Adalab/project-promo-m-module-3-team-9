@@ -1,10 +1,14 @@
 import Card from './Card';
 import Form from './Form';
-import React, {useState, useEffect, createRef} from 'react';
+import {useState, useEffect} from 'react';
 import ls from '../services/localstorage';
+import api from '../services/api';
 
 function Main() {
   const localStorageForm = ls.get('form') || {};
+
+  const [status, setStatus] = useState('No enviado'); // "No enviado", "Me ha dado error", "Me ha dado ok"
+  const [cardURL, setURL] = useState('');
 
   const [form, setForm] = useState(
     localStorageForm.form || {
@@ -24,19 +28,16 @@ function Main() {
   }, [form]);
 
   const handleReset = () => {
-    setForm(
-      {
-        name: '',
-        job: '',
-        email: '',
-        phone: '',
-        linkedin: '',
-        github: '',
-        photo: '',
-        palette: '1',
-      },
-      document.getElementById('reset').reset()
-    );
+    setForm({
+      name: '',
+      job: '',
+      email: '',
+      phone: '',
+      linkedin: '',
+      github: '',
+      photo: '',
+      palette: '1',
+    });
     localStorage.clear();
   };
 
@@ -56,16 +57,30 @@ function Main() {
     });
   };
 
+  const handleCreateCard = () => {
+    api(form).then((resultCard) => {
+      const result = resultCard.cardURL;
+      if (resultCard.success === false) {
+        setStatus('Me ha dado error');
+      } else {
+        setStatus('Me ha dado ok');
+        setURL(result);
+      }
+    });
+  };
+
   return (
     <main className="main_card--background">
       <div className="main_card">
         <Card {...form} handleOnClickReset={handleReset} />
         <Form
+          handleCreatedCard={handleCreateCard}
+          status={status}
+          cardURL={cardURL}
           updateAvatar={updateAvatar}
           {...form}
           onKeyUp={handleOnKeyUp}
           onClick={handleOnChange}
-          // palette={palette}
         />
       </div>
     </main>

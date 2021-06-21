@@ -17,7 +17,6 @@ function Fill({
       className="contact-form js-form"
       action="https://formspree.io/f/mbjpqobw"
       method="POST"
-      onKeyUp={onKeyUp}
     >
       <label className="label_fill" htmlFor="fullName">
         Nombre completo
@@ -26,10 +25,11 @@ function Fill({
         className="input js-inputname"
         id="fullName"
         type="text"
-        defaultValue={name}
+        value={name}
         name="name"
         placeholder="Ej:Sally Jill"
         required
+        onChange={onKeyUp}
       />
       <label className="label_fill" htmlFor="rol">
         Puesto
@@ -37,11 +37,12 @@ function Fill({
       <input
         className="input js-inputjobtitle"
         id="rol"
-        defaultValue={job}
+        value={job}
         type="text"
         name="job"
         placeholder="Ej:Front-End unicorn"
         required
+        onChange={onKeyUp}
       />
 
       <label className="label_fill"> Imagen de perfil </label>
@@ -64,11 +65,12 @@ function Fill({
       <input
         className="input js-inputEmail"
         type="email"
-        defaultValue={email}
+        value={email}
         id="emailAddress"
         name="email"
         placeholder="Ej:sally-jill@gmail.com"
         required
+        onChange={onKeyUp}
       />
       <label className="label_fill" htmlFor="telephone">
         Telefono
@@ -76,11 +78,12 @@ function Fill({
       <input
         className="input js-inputTel"
         type="tel"
-        defaultValue={phone}
+        value={phone}
         id="telephone"
         name="phone"
         placeholder="Ej:555-55-55-55"
         pattern=".{9}"
+        onChange={onKeyUp}
       />
       <label className="label_fill" htmlFor="Linkedin">
         Linkedin{' '}
@@ -88,11 +91,12 @@ function Fill({
       <input
         className="input js-inputIn"
         id="Linkedin"
-        defaultValue={linkedin}
+        value={linkedin}
         type="text"
         name="linkedin"
         placeholder="Ej: sally.hill"
         required
+        onChange={onKeyUp}
       />
       <label className="label_fill" htmlFor="Github">
         {' '}
@@ -101,11 +105,12 @@ function Fill({
       <input
         className="input js-inputGit"
         id="Github"
-        defaultValue={github}
+        value={github}
         type="text"
         name="github"
         placeholder="Ej: sally-hill"
         required
+        onChange={onKeyUp}
       />
     </form>
   );
