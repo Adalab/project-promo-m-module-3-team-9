@@ -4,7 +4,22 @@ import Fill from './Fill';
 import Share from './Share';
 import {useState} from 'react';
 
-function Form({photo, updateAvatar, onKeyUp, onClick, palette}) {
+function Form({
+  photo,
+  updateAvatar,
+  onKeyUp,
+  onClick,
+  palette,
+  name,
+  job,
+  email,
+  github,
+  linkedin,
+  phone,
+  handleCreatedCard,
+  cardURL,
+  status,
+}) {
   const [active, setActive] = useState('design');
 
   return (
@@ -15,7 +30,7 @@ function Form({photo, updateAvatar, onKeyUp, onClick, palette}) {
         onClick={() => setActive('design')}
         active={active === 'design'}
       >
-        <Design onClick={onClick} palette={palette}></Design>
+        <Design onClick={onClick} palette={palette} />
       </Collapsable>
       <Collapsable
         title="Rellena"
@@ -24,10 +39,16 @@ function Form({photo, updateAvatar, onKeyUp, onClick, palette}) {
         active={active === 'fill'}
       >
         <Fill
+          name={name}
+          job={job}
+          email={email}
+          github={github}
+          linkedin={linkedin}
+          phone={phone}
           updateAvatar={updateAvatar}
           photo={photo}
           onKeyUp={onKeyUp}
-        ></Fill>
+        />
       </Collapsable>
       <Collapsable
         title="Comparte"
@@ -35,7 +56,11 @@ function Form({photo, updateAvatar, onKeyUp, onClick, palette}) {
         onClick={() => setActive('share')}
         active={active === 'share'}
       >
-        <Share></Share>
+        <Share
+          handleCreatedCard={handleCreatedCard}
+          status={status}
+          cardURL={cardURL}
+        />
       </Collapsable>
     </div>
   );

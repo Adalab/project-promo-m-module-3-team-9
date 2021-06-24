@@ -22,9 +22,11 @@
 
 //SHARE - TWITTER
 .cardCreated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   font-family: $secondFont;
-  display: none;
   border-top: $mainBorder;
   border-bottom: $mainBorder;
   margin: 20px 0;
@@ -50,6 +52,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-content: center;
   background-color: #00a0f5;
   width: 181px;
   height: 30px;
@@ -65,10 +68,7 @@
   color: $whiteColor;
   margin-right: 9.5px;
 }
-.twShare {
-  width: 134px;
-  height: 20px;
-}
+
 
 .showLink {
   .cardCreated {
@@ -84,4 +84,11 @@
 
 .errorButtonPress {
   background-color: #d5d5d5;
+}
+
+.errorcontainer{
+  height: 60px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 18px;
 }

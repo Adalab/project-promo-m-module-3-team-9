@@ -1,18 +1,19 @@
-import logo from "../images/logo-awesome-profile-cards.svg";
+import logo from '../images/logo-awesome-profile-cards.svg';
+import {Link} from 'react-router-dom';
 
 function Header() {
   return (
     <header className="header">
       <h1 className="title">Awesome profile cards</h1>
       <div className="imagecontainer">
-        <a href="./index.html">
+        <Link to="/">
           <img
             className="logo"
             src={logo}
             alt="Logo"
             title="Awesome profile cards"
           />
-        </a>
+        </Link>
       </div>
     </header>
   );
