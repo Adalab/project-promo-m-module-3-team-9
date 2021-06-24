@@ -9,7 +9,6 @@ function Card({
   github,
   palette,
   handleOnClickReset,
-  formReset,
 }) {
   return (
     <div className="main_card--preview">
