@@ -8,7 +8,7 @@ server.use(express.json({ limit: "10mb" }));
 server.set("view engine", "ejs");
 
 // init express aplication
-const serverPort = 4000;
+const serverPort = proccess.env.port || 4000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -53,7 +53,7 @@ server.post("/card/", (req, res) => {
     response.error = "Missing photo";
   } else {
     response.success = true;
-    response.cardURL = "";
+    response.cardURL = "https://awesome-profile-cards-onchange.herokuapp.com/";
   }
 
   res.json({ response });
