@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const Database = require("better-sqlite3");
 
 // create and config server
 const server = express();
@@ -8,7 +9,7 @@ server.use(express.json({ limit: "10mb" }));
 server.set("view engine", "ejs");
 
 // init express aplication
-const serverPort = process.env.PORT || 4000;
+const serverPort = process.env.PORT || 3000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
@@ -17,13 +18,16 @@ server.listen(serverPort, () => {
 const serverStaticPath = "./public";
 server.use(express.static(serverStaticPath));
 
+const db = new Database("./src/data/database.db", { verbose: console.log });
+
 server.get("/card/:id", (req, res) => {
-  res.render("views/card", cardData);
-  console.log(cardData);
+  const query = db.prepare(`SELECT * from card`);
+  const data = query.all();
+  res.render("views/card", data);
 });
 
 server.post("/card/", (req, res) => {
-  console.log("Peticin en /card");
+  console.log("Petición en /card");
   console.log(req.body);
   const response = {};
 
@@ -53,7 +57,8 @@ server.post("/card/", (req, res) => {
     response.error = "Missing photo";
   } else {
     response.success = true;
-    response.cardURL = "https://awesome-profile-cards-onchange.herokuapp.com/";
+    response.cardURL =
+      "https://awesome-profile-cards-onchange.herokuapp.com/card/";
   }
 
   res.json({ response });
