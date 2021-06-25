@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "build": "cd web && npm run build && rm ../public && mv build ../public"
+    "public": "cd web && npm run build && rm ../public && mv build ../public"
   },
   "repository": {
     "type": "git",
