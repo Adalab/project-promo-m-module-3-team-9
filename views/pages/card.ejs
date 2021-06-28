@@ -12,21 +12,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet" />
 
   <!-- Fontawesome -->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
   <!-- Monserrat Font + Open Sans Font -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="/static/css/main.bff2cf1e.chunk.css" rel="stylesheet" type="text/css" />
 
 
-  <title>React App</title>
+
+  <title>OnChange</title>
 </head>
 
 <body>
-  <div class="main_card--preview">
-    <section class="card_background">
+  <div class="main_card--preview" style="width: 100%;">
+    <section class="card_background" style=" 
+    width: 100%;
+    height: 100vh;
+    align-content: center;
+    background: lightsteelblue;">
 
-      <section class={`card js-card js-color-${palette}`}>
+      <section class="card js-card js-color-<%= palette %>" style="background: white;">
         <section class="card_info">
           <h2 class="card_info--name js-previewname">
             <%= name %>
@@ -47,17 +56,20 @@
             </a>
           </li>
           <li>
-            <a class="js-linkEmail" href="mailto:<%=email %>" target="_blank" rel="noopener noreferrer" title="mail-icon">
+            <a class="js-linkEmail" href="mailto:<%=email %>" target="_blank" rel="noopener noreferrer"
+              title="mail-icon">
               <i class="fa fa-envelope card_media--item"></i>
             </a>
           </li>
           <li>
-            <a class="js-linkIn" href="https://www.linkedin.com/in/<%=linkedin %>" target="_blank" rel="noopener noreferrer" title="linkedin-icon">
+            <a class="js-linkIn" href="https://www.linkedin.com/in/<%=linkedin %>" target="_blank"
+              rel="noopener noreferrer" title="linkedin-icon">
               <i class="fab fa-linkedin-in card_media--item"></i>
             </a>
           </li>
           <li>
-            <a class="js-linkGit" href="https://github.com/<%=github %>" target="_blank" rel="noopener noreferrer" title="github-icon">
+            <a class="js-linkGit" href="https://github.com/<%=github %>" target="_blank" rel="noopener noreferrer"
+              title="github-icon">
               <i class="fab fa-github-alt card_media--item"></i>
             </a>
           </li>
