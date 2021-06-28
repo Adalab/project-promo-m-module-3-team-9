@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+//const { request } = require("express");
+//const path = require("path");
 const Database = require("better-sqlite3");
 
 // create and config server
@@ -21,9 +23,9 @@ server.use(express.static(serverStaticPath));
 const db = new Database("./src/data/database.db", { verbose: console.log });
 
 server.get("/card/:id", (req, res) => {
-  const query = db.prepare(`SELECT * from card`);
-  const data = query.all();
-  res.render("views/card", data);
+  const query = db.prepare(`SELECT * from card WHERE id=?`);
+  const data = query.get(req.params.id);
+  res.render("pages/card", data);
 });
 
 server.post("/card/", (req, res) => {
@@ -56,12 +58,31 @@ server.post("/card/", (req, res) => {
     response.success = false;
     response.error = "Missing photo";
   } else {
+    // preparamos la query
+    const query = db.prepare(
+      `INSERT INTO card (palette, name, job, phone, email, linkedin, github, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+    );
+    // ejecutamos la query
+    const result = query.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.phone,
+      req.body.email,
+      req.body.linkedin,
+      req.body.github,
+      req.body.photo
+    );
+
     response.success = true;
-    response.cardURL =
-      "https://awesome-profile-cards-onchange.herokuapp.com/card/";
+    if (req.hostname === "localhost") {
+      response.cardURL = `http://localhost:${serverPort}/card/${result.lastInsertRowid}`;
+    } else {
+      response.cardURL = `https://awesome-profile-cards-onchange.herokuapp.com/card/${result.lastInsertRowid}`;
+    }
   }
 
-  res.json({ response });
+  res.json(response);
 });
 
 server.get("*", (req, res) => {
